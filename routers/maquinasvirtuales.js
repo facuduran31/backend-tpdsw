@@ -1,4 +1,3 @@
-// maquinasvirtuales.js
 const express = require('express');
 const routes = express.Router();
 const conn = require('../database/db.js');
@@ -21,7 +20,5 @@ routes.post('/', (req, res) => {
         }
     );
 });
-
-// Resto del código de actualización (PUT) y eliminación (DELETE) se mantiene igual.
 
 module.exports = routes;

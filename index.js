@@ -13,7 +13,7 @@ const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js')
 
 // Ruta raíz
 app.get('/', (req, res) => {
-  res.send("Funciona");
+  res.send("Corriendo servidor");
 });
 
 // Ruta maquinas virtuales
