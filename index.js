@@ -7,7 +7,6 @@ const port = 3000;
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use(verificarToken());
 
 // Rutas
 const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
