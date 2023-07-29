@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(cors());
 
 // Rutas
-const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js')
+const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
+const routerLogin = require('./routers/login.js');
 
 // Ruta raíz
 app.get('/', (req, res) => {
@@ -18,6 +19,9 @@ app.get('/', (req, res) => {
 
 // Ruta maquinas virtuales
 app.use('/api/maquinasvirtuales', routerMaquinasVirtuales);
+
+// Ruta login
+app.use('/api/login', routerLogin);
 
 // Iniciar el servidor
 app.listen(port, () => {
