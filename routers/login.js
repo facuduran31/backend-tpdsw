@@ -18,7 +18,7 @@ routerLogin.post('/', (req, res) => {
       return res.status(401).json({ error: 'No se encontró ningún usuario con esas credenciales.' });
     }
 
-    const usuarioAutenticado = results[0];
+    let usuarioAutenticado = results[0];
 
     // Generar y enviar token
     jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
@@ -32,4 +32,29 @@ routerLogin.post('/', (req, res) => {
   });
 });
 
-module.exports = routerLogin;
+// Middleware para verificar el token en las rutas protegidas.
+function verificarToken(req, res, next) {
+    const token = req.header('Authorization');
+  
+    if (!token) {
+      return res.status(401).json({ error: 'Acceso denegado. Token no proporcionado.' });
+    }
+  
+    // Verificar el token con el método 'verify' de jsonwebtoken.
+    jwt.verify(token, SECRET_KEY, (err, decoded) => {
+      if (err) {
+        // El token no es válido.
+        console.error('Token inválido:', err);
+        return res.status(401).json({ error: 'Token inválido.' });
+      }
+  
+      // Token válido, puedes acceder a la información del usuario autenticado en 'decoded'.
+      req.usuarioAutenticado = decoded;
+      next();
+    });
+  }
+  
+module.exports = {
+    routerLogin,
+    verificarToken
+};

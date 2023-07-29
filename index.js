@@ -7,10 +7,11 @@ const port = 3000;
 // Middlewares
 app.use(express.json());
 app.use(cors());
+app.use(verificarToken());
 
 // Rutas
 const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
-const routerLogin = require('./routers/login.js');
+const { routerLogin, verificarToken } = require('./routers/login.js');
 
 // Ruta raíz
 app.get('/', (req, res) => {
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // Ruta maquinas virtuales
-app.use('/api/maquinasvirtuales', routerMaquinasVirtuales);
+app.use('/api/maquinasvirtuales', verificarToken, routerMaquinasVirtuales);
 
 // Ruta login
 app.use('/api/login', routerLogin);
