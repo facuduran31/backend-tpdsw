@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Ruta maquinas virtuales
-app.use('/maquinasvirtuales', routerMaquinasVirtuales);
+app.use('/api/maquinasvirtuales', routerMaquinasVirtuales);
 
 // Iniciar el servidor
 app.listen(port, () => {
