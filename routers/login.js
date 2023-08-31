@@ -8,7 +8,7 @@ routerLogin.post('/', (req, res) => {
   const { email, password } = req.body;
 
   // Verificar credenciales
-  connection.query('SELECT * FROM docente WHERE email = ? AND password = ?', [email, password], (err, results) => {
+  connection.query('SELECT * FROM usuario WHERE email = ? AND password = ?', [email, password], (err, results) => {
     if (err) {
       console.error('Error al consultar la base de datos:', err);
       return res.status(500).json({ error: 'Error al verificar las credenciales.' });

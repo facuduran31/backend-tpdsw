@@ -1,5 +1,11 @@
-POST http://localhost:3000/api/login/ HTTP/1.1
+GET http://localhost:3000/api/maquinasvirtuales/ HTTP/1.1
 content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZERvY2VudGUiOjYsIm5vbWJyZUFwZWxsaWRvIjoiRmFjdW5kbyBEdXJhbiIsIm51bWVyb0xlZ2FqbyI6IjkyMzYxIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsImlhdCI6MTY5MTc2NTkxMCwiZXhwIjoxNjkxNzY5NTEwfQ.QRb4_NQjp_sYDYxJl68IJL1RGUc4iABnmNuQFCN0MH0
+
+###
+
+POST http://localhost:3000/api/login HTTP/1.1
+Content-Type: application/json
 
 {
     "email": "facundoduran31@gmail.com",
