@@ -16,6 +16,13 @@ routes.get('/', (req, res) => {
 });
 
 routes.get('/:id', (req, res) => {
+
+  const tipoUsuario = req.usuarioAutenticado.tipoUsuario;
+
+  if (tipoUsuario !== 'Encargado') {
+    return res.status(403).json({ error: 'Acceso denegado. Solo para Encargados.' });
+  }
+
     conn.query('SELECT * FROM maquinavirtual WHERE idMaquinaVirtual = ?', [req.params.id], (err, rows) => {
     if (err) return res.send(err);
     console.log(rows[0]);

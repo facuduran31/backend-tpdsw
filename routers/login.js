@@ -21,7 +21,7 @@ routerLogin.post('/', (req, res) => {
     let usuarioAutenticado = results[0];
 
     // Generar y enviar token
-    jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
+    jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '5s' }, (err, token) => {
       if (err) {
         console.error('Error al generar el token:', err);
         return res.status(500).json({ error: 'Error al generar el token.' });
@@ -31,6 +31,36 @@ routerLogin.post('/', (req, res) => {
     });
   });
 });
+
+routerLogin.get('/verify', (req, res) => {
+  const token = req.header('Authorization');
+
+  if (!token) {
+    return res.status(401).json({ error: 'Acceso denegado. Token no proporcionado.' });
+  }
+
+  jwt.verify(token, SECRET_KEY, (err, decoded) => {
+    if (err) {
+      // El token no es válido.
+      console.error('Token inválido:', err);
+      return res.status(401).json({ error: 'Token inválido.' });
+    }
+
+    // Verificar el tipo de usuario
+    const tipoUsuario = decoded.tipoUsuario;
+    if (tipoUsuario !== 'Docente' && tipoUsuario !== 'Encargado') {
+      return res.status(403).json({ error: 'Acceso denegado. Tipo de usuario no válido.' });
+    }
+
+    res.json({ mensaje: 'Token válido.', usuarioAutenticado: decoded, token, expirado: isTokenExpirado(token)});
+  });
+});
+
+function isTokenExpirado(token) {
+  const { exp } = jwt.decode(token);
+  const now = Date.now() / 1000;
+  return now > exp;
+}
 
 // Middleware para verificar el token en las rutas protegidas.
 function verificarToken(req, res, next) {
