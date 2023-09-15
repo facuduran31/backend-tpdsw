@@ -58,4 +58,17 @@ routes.post('/', (req, res) => {
     );
 });
 
+routes.delete('/:id', (req, res) => {
+    const tipoUsuario = req.usuarioAutenticado.tipoUsuario;
+
+    if (tipoUsuario !== 'Encargado') {
+      return res.status(403).json({ error: 'Acceso denegado. Solo para Encargados.' });
+    }
+
+    conn.query('DELETE FROM maquinavirtual WHERE idMaquinaVirtual = ?', [req.params.id], (err, result) => {
+      if(err) res.send(err);
+      res.json(result);
+    });
+});
+
 module.exports = routes;
