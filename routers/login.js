@@ -21,7 +21,7 @@ routerLogin.post('/', (req, res) => {
     let usuarioAutenticado = results[0];
 
     // Generar y enviar token
-    jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '5s' }, (err, token) => {
+    jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '24h' }, (err, token) => {
       if (err) {
         console.error('Error al generar el token:', err);
         return res.status(500).json({ error: 'Error al generar el token.' });
