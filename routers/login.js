@@ -43,7 +43,7 @@ routerLogin.get('/verify', (req, res) => {
     if (err) {
       // El token no es válido.
       console.error('Token inválido:', err);
-      return res.status(401).json({ error: 'Token inválido.' });
+      return res.status(401).json({ error: 'Token inválido.', token: token });
     }
 
     // Verificar el tipo de usuario
