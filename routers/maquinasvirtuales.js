@@ -42,7 +42,7 @@ routes.put('/:id', (req, res) => {
         [req.body.sistemaOperativo, req.body.materias, req.body.programas, req.params.id],
         (err, result) => {
           if (err) return res.send(err);
-          res.json(result);
+          res.json(req.body);
         }
     );
 });
