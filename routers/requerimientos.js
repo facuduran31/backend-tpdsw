@@ -57,7 +57,7 @@ routes.get('/', (req, res) => {
       conn.query(
           `INSERT INTO requerimiento (tipoRequerimiento, estado, comentarioEncargado, legajoEncargado, legajoDocente, hdmi, vga, mouse, idLaboratorio, fechaInicio, fechaFin, horaInicio, horaFin, materia, zapatilla, proyector, tipoReserva, descripcion) 
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-          [req.body.tipoRequerimiento, req.body.estado, req.body.programas, req.params.comentarioEncargado, req.params.legajoEncargado, req.params.legajoDocente, req.params.hdmi, req.params.vga, req.params.mouse, req.params.idLaboratorio, req.params.fechaInicio, req.params.fechaFin, req.params.horaInicio, req.params.horaFin, req.params.materia, req.params.zapatilla, req.params.proyector, req.params.tipoReserva, req.params.descripcion, req.params.idRequerimiento],
+          [req.body.tipoRequerimiento, req.body.estado, req.body.programas, req.body.comentarioEncargado, req.body.legajoEncargado, req.body.legajoDocente, req.body.hdmi, req.body.vga, req.body.mouse, req.body.idLaboratorio, req.body.fechaInicio, req.body.fechaFin, req.body.horaInicio, req.body.horaFin, req.body.materia, req.body.zapatilla, req.body.proyector, req.body.tipoReserva, req.body.descripcion, req.body.idRequerimiento],
           (err, result) => {
               if (err) return res.send(err);
               res.json({ id: result.insertId });
