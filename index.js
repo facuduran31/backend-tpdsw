@@ -11,7 +11,7 @@ app.use(cors());
 // Rutas
 const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
 const { routerLogin, verificarToken } = require('./routers/login.js');
-const { routerRequerimientos } = require('./routers/requerimientos.js')
+const routerRequerimientos = require('./routers/requerimientos.js')
 
 // Ruta raíz
 app.get('/', (req, res) => {
