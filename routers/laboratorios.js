@@ -38,8 +38,8 @@ routes.put('/:id', (req, res) => {
     }
 
     conn.query(
-        `UPDATE laboratorio SET sistemaOperativo = ?, materias = ?, programas = ? WHERE idLaboratorio = ?`,
-        [req.body.sistemaOperativo, req.body.materias, req.body.programas, req.params.id],
+        `UPDATE laboratorio SET nombreLaboratorio = ? WHERE idLaboratorio = ?`,
+        [req.body.nombreLaboratorio, req.params.id],
         (err, result) => {
           if (err) return res.send(err);
           res.json(req.body);
@@ -56,8 +56,8 @@ routes.post('/', (req, res) => {
 
     conn.query(
         `INSERT INTO laboratorio (nombreLaboratorio) 
-        VALUES (?, ?, ?)`,
-        [req.body.sistemaOperativo, req.body.materias, req.body.programas],
+        VALUES (?)`,
+        [req.body.nombreLaboratorio],
         (err, result) => {
             if (err) return res.send(err);
             res.json({ id: result.insertId });
