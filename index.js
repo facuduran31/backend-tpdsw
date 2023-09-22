@@ -12,6 +12,7 @@ app.use(cors());
 const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
 const { routerLogin, verificarToken } = require('./routers/login.js');
 const routerRequerimientos = require('./routers/requerimientos.js')
+const routerLaboratorios = require('./routers/laboratorios.js')
 
 // Ruta raíz
 app.get('/', (req, res) => {
@@ -20,6 +21,9 @@ app.get('/', (req, res) => {
 
 // Ruta maquinas virtuales
 app.use('/api/maquinasvirtuales', verificarToken, routerMaquinasVirtuales);
+
+// Ruta laboratorios
+app.use('/api/laboratorios', verificarToken, routerLaboratorios);
 
 // Ruta login
 app.use('/api/login', routerLogin);
