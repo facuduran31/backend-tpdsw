@@ -13,6 +13,7 @@ const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
 const { routerLogin, verificarToken } = require('./routers/login.js');
 const routerRequerimientos = require('./routers/requerimientos.js')
 const routerLaboratorios = require('./routers/laboratorios.js')
+const routerComputadoras = require('./routers/computadoras.js')
 
 // Ruta raíz
 app.get('/', (req, res) => {
