@@ -25,6 +25,9 @@ app.use('/api/maquinasvirtuales', verificarToken, routerMaquinasVirtuales);
 // Ruta laboratorios
 app.use('/api/laboratorios', verificarToken, routerLaboratorios);
 
+// Ruta computadoras
+app.use('/api/computadoras', verificarToken, routerComputadoras);
+
 // Ruta login
 app.use('/api/login', routerLogin);
 
