@@ -12,7 +12,8 @@ class LaboratorioController {
   }
 
   getLaboratorioById(req, res){
-    LaboratorioModel.getLaboratorioById((err, laboratorio) => {
+    const id = req.params.id;
+    LaboratorioModel.getLaboratorioById(id, (err, laboratorio) => {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la laboratorio' });
       } else {
@@ -32,7 +33,8 @@ class LaboratorioController {
   }
 
   updateLaboratorio(req, res){
-    LaboratorioModel.updateLaboratorio((err, laboratorio) => {
+    const id = req.params.id;
+    LaboratorioModel.updateLaboratorio(id, (err, laboratorio) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar el laboratorio' });
       } else {
@@ -42,7 +44,8 @@ class LaboratorioController {
   }
 
   deleteLaboratorio(req, res){
-    LaboratorioModel.deleteLaboratorio((err, laboratorio) => {
+    const id = req.params.id;
+    LaboratorioModel.deleteLaboratorio(id, (err, laboratorio) => {
       if(err) {
         res.status(500).json({ error: 'Error al eliminar el laboratorio' });
       } else {

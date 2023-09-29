@@ -12,7 +12,8 @@ class RequerimientoController {
   }
 
   getRequerimientoById(req, res){
-    RequerimientoModel.getRequerimientoById((err, requerimiento) => {
+    const id = req.params.id;
+    RequerimientoModel.getRequerimientoById(id, (err, requerimiento) => {
       if(err) {
         res.status(500).json({ error: 'Error al obtener el requerimiento' });
       } else {
@@ -32,7 +33,8 @@ class RequerimientoController {
   }
 
   updateRequerimiento(req, res){
-    RequerimientoModel.updateRequerimiento((err, requerimiento) => {
+    const id = req.params.id;
+    RequerimientoModel.updateRequerimiento(id, (err, requerimiento) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar el requerimiento' });
       } else {
@@ -42,7 +44,8 @@ class RequerimientoController {
   }
 
   deleteRequerimiento(req, res){
-    RequerimientoModel.deleteRequerimiento((err, requerimiento) => {
+    const id = req.params.id;
+    RequerimientoModel.deleteRequerimiento(id, (err, requerimiento) => {
       if(err) {
         res.status(500).json({ error: 'Error al eliminar el requerimiento' });
       } else {

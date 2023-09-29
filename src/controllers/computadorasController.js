@@ -12,7 +12,8 @@ class ComputadoraController {
   }
 
   getComputadoraById(req, res){
-    ComputadoraModel.getcomputadoraById((err, computadora) => {
+    const id = req.params.id;
+    ComputadoraModel.getcomputadoraById(id, (err, computadora) => {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la computadora' });
       } else {
@@ -32,7 +33,8 @@ class ComputadoraController {
   }
 
   updateComputadora(req, res){
-    ComputadoraModel.updateComputadora((err, computadora) => {
+    const id = req.params.id;
+    ComputadoraModel.updateComputadora(id, (err, computadora) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar la computadora' });
       } else {
@@ -42,7 +44,8 @@ class ComputadoraController {
   }
 
   deleteComputadora(req, res){
-    ComputadoraModel.deleteComputadora((err, computadora) => {
+    const id = req.params.id;
+    ComputadoraModel.deleteComputadora(id, (err, computadora) => {
       if(err) {
         res.status(500).json({ error: 'Error al eliminar la computadora' });
       } else {

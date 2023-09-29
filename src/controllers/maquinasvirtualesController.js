@@ -12,7 +12,8 @@ class MaquinavirtualController {
   }
 
   getMaquinavirtualById(req, res){
-    MaquinaVirtualModel.getMaquinavirtualById((err, maquinavirtual) => {
+    const id = req.params.id;
+    MaquinaVirtualModel.getMaquinavirtualById(id, (err, maquinavirtual) => {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la maquina virtual' });
       } else {
@@ -32,7 +33,8 @@ class MaquinavirtualController {
   }
 
   updateMaquinavirtual(req, res){
-    MaquinaVirtualModel.updateMaquinavirtual((err, maquinavirtual) => {
+    const id = req.params.id;
+    MaquinaVirtualModel.updateMaquinavirtual(id, (err, maquinavirtual) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar la maquina virtual' });
       } else {
@@ -42,7 +44,8 @@ class MaquinavirtualController {
   }
 
   deleteMaquinavirtual(req, res){
-    MaquinaVirtualModel.deleteMaquinavirtual((err, maquinavirtual) => {
+    const id = req.params.id;
+    MaquinaVirtualModel.deleteMaquinavirtual(id, (err, maquinavirtual) => {
       if(err) {
         res.status(500).json({ error: 'Error al eliminar la maquina virtual' });
       } else {
