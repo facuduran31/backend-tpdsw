@@ -1,10 +1,10 @@
-const MaquinaVirtualModel = require('../models/maquinasvirtualesModel');
+const MaquinaVirtualModel = require('../../models/maquinasvirtualesModel');
 
 class MaquinavirtualController {
   getAllMaquinasvirtuales(req, res){
     MaquinaVirtualModel.getAllMaquinasvirtuales((err, maquinasvirtuales) => {
       if(err){
-        res.status(500).json({ error: 'Error al obtener las maquinas virtuales', detalle: err });
+        res.status(500).json({ error: 'Error al obtener las maquinas virtuales' });
       } else {
         res.json(maquinasvirtuales);
       }
