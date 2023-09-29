@@ -4,10 +4,10 @@ const router = express.Router();
 const MaquinavirtualController = require('../controllers/maquinasvirtualesController');
 
 // Definir rutas
-router.get('/encargados', MaquinavirtualController.getAllMaquinasvirtuales);
-router.get('/encargados/:id', MaquinavirtualController.getMaquinavirtualById);
-router.post('/encargados', MaquinavirtualController.createMaquinavirtual);
-router.put('/encargados/:id', MaquinavirtualController.updateMaquinavirtual);
-router.delete('/encargados/:id', MaquinavirtualController.deleteMaquinavirtual);
+router.get('/maquinasvirtuales', MaquinavirtualController.getAllMaquinasvirtuales);
+router.get('/maquinasvirtuales/:id', MaquinavirtualController.getMaquinavirtualById);
+router.post('/maquinasvirtuales', MaquinavirtualController.createMaquinavirtual);
+router.put('/maquinasvirtuales/:id', MaquinavirtualController.updateMaquinavirtual);
+router.delete('/maquinasvirtuales/:id', MaquinavirtualController.deleteMaquinavirtual);
 
 module.exports = router;
