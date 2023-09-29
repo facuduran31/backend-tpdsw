@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const LaboratoriosController = require('../controllers/laboratoriosController');
+const LaboratoriosController = require('../../controllers/laboratoriosController');
 
 // Definir rutas
 router.get('/laboratorios', LaboratoriosController.getAllLaboratorios);
