@@ -2,7 +2,7 @@ const db = require('../database/db.js');
 
 class MaquinaVirtualModel {
   getAllMaquinasvirtuales(callback) {
-    db.query('SELECT * FROM maquinasvirtuales', callback);
+    db.query('SELECT * FROM maquinavirtual', callback);
   }
 
   getMaquinavirtualById(id, callback) {
