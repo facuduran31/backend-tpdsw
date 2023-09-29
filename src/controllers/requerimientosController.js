@@ -4,7 +4,7 @@ class RequerimientoController {
   getAllRequerimientos(req, res){
     RequerimientoModel.getAllRequerimientos((err, requerimientos) => {
       if(err){
-        res.status(500).json({ error: 'Error al obtener los requerimientos' });
+        res.status(500).json({ error: 'Error al obtener los requerimientos', detalle: err });
       } else {
         res.json(requerimientos);
       }
@@ -24,7 +24,7 @@ class RequerimientoController {
   createRequerimiento(req, res){
     RequerimientoModel.createRequerimiento((err, requerimiento) => {
       if(err) {
-        res.status(500).json({ error: 'Error al crear el requerimiento' });
+        res.status(500).json({ error: 'Error al crear el requerimiento'});
       } else {
         res.json(requerimiento);
       }

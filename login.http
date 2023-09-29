@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/maquinasvirtuales/ HTTP/1.1
+GET http://localhost:3000/api/requerimientos/ HTTP/1.1
 content-type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2MDE2ODg3LCJleHAiOjE2OTYxMDMyODd9.f2zIIOEhl9df4emMVYaPGIPZkF9ZE6owtQoGcgIRFkE
 
