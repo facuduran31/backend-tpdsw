@@ -3,37 +3,19 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 3000;
+const encargadoRouter = require('./routers/encargadoRouter');
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
-
-// Rutas
-const routerMaquinasVirtuales = require('./routers/maquinasvirtuales.js');
-const { routerLogin, verificarToken } = require('./routers/login.js');
-const routerRequerimientos = require('./routers/requerimientos.js')
-const routerLaboratorios = require('./routers/laboratorios.js')
-const routerComputadoras = require('./routers/computadoras.js')
 
 // Ruta raíz
 app.get('/', (req, res) => {
   res.send("Corriendo servidor");
 });
 
-// Ruta maquinas virtuales
-app.use('/api/maquinasvirtuales', verificarToken, routerMaquinasVirtuales);
-
-// Ruta laboratorios
-app.use('/api/laboratorios', verificarToken, routerLaboratorios);
-
-// Ruta computadoras
-app.use('/api/computadoras', verificarToken, routerComputadoras);
-
-// Ruta login
-app.use('/api/login', routerLogin);
-
-// Ruta requerimientos
-app.use('/api/requerimientos', verificarToken, routerRequerimientos);
+// Usar el enrutador de encargados
+app.use('/api', encargadoRouter);
 
 // Iniciar el servidor
 app.listen(port, () => {
