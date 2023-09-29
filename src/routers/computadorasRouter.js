@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ComputadorasController = require('../../controllers/computadorasController');
+const ComputadorasController = require('../controllers/computadorasController');
 
 // Definir rutas
 router.get('/computadoras', ComputadorasController.getAllComputadoras);
