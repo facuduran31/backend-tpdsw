@@ -4,9 +4,9 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 const maquinasvirtualesRouter = require('./routers/maquinasvirtualesRouter');
-const computadorasRouter = require('./routers/computadorasRouter')
-const requerimientosRouter = require('./routers/requerimientosRouter')
-const laboratoriosRouter = require('./routers/laboratoriosRouter')
+const computadorasRouter = require('./routers/computadorasRouter');
+const requerimientosRouter = require('./routers/requerimientosRouter');
+const laboratoriosRouter = require('./routers/laboratoriosRouter');
 
 // Middlewares
 app.use(express.json());
