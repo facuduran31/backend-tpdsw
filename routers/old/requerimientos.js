@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = express.Router();
-const conn = require('../database/db.js');
+const conn = require('../../database/db.js');
 
 routes.get('/', (req, res) => {
 

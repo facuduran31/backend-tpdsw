@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 3000;
-const encargadoRouter = require('./routers/encargadoRouter');
+const maquinasvirtualesRouter = require('./routers/maquinasvirtualesRouter');
 
 // Middlewares
 app.use(express.json());
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 // Usar el enrutador de encargados
-app.use('/api', encargadoRouter);
+app.use('/api/', maquinasvirtualesRouter);
 
 // Iniciar el servidor
 app.listen(port, () => {
