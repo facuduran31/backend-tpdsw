@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const connection = require('../database/db');
+const connection = require('../../database/db');
 const SECRET_KEY = "claveSecreta";
 const routerLogin = express.Router();
 
