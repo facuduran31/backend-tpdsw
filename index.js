@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
 });
 
 // Rutas
-app.use('/api/', verificarToken, maquinasvirtualesRouter);
-app.use('/api/', verificarToken, computadorasRouter);
-app.use('/api/', verificarToken, requerimientosRouter);
-app.use('/api/', verificarToken, laboratoriosRouter);
+app.use('/api/', maquinasvirtualesRouter);
+app.use('/api/', computadorasRouter);
+app.use('/api/', requerimientosRouter);
+app.use('/api/', laboratoriosRouter);
 app.use('/api/', routerLogin);
 
 // Iniciar el servidor
