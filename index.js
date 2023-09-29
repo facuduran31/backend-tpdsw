@@ -23,7 +23,7 @@ app.use('/api/', maquinasvirtualesRouter);
 app.use('/api/', computadorasRouter);
 app.use('/api/', requerimientosRouter);
 app.use('/api/', laboratoriosRouter);
-app.use('/api/', routerLogin);
+app.use('/api/login', routerLogin);
 
 // Iniciar el servidor
 app.listen(port, () => {
