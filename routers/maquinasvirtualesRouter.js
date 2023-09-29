@@ -1,4 +1,3 @@
-// routers/encargadoRouter.js
 const express = require('express');
 const router = express.Router();
 const MaquinavirtualController = require('../controllers/maquinasvirtualesController');
