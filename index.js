@@ -5,6 +5,8 @@ const app = express();
 const port = 3000;
 const maquinasvirtualesRouter = require('./routers/maquinasvirtualesRouter');
 const computadorasRouter = require('./routers/computadorasRouter')
+const requerimientosRouter = require('./routers/requerimientosRouter')
+const laboratoriosRouter = require('./routers/laboratoriosRouter')
 
 // Middlewares
 app.use(express.json());
@@ -18,6 +20,8 @@ app.get('/', (req, res) => {
 // Rutas
 app.use('/api/', maquinasvirtualesRouter);
 app.use('/api/', computadorasRouter);
+app.use('/api/', requerimientosRouter);
+app.use('/api/', laboratoriosRouter);
 
 // Iniciar el servidor
 app.listen(port, () => {
