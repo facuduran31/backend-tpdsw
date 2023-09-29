@@ -1,7 +1,7 @@
 const db = require('../database/db.js');
 
 class LaboratorioModel {
-  getAlllaboratorios(callback) {
+  getAllLaboratorios(callback) {
     db.query('SELECT * FROM laboratorio', callback);
   }
 
