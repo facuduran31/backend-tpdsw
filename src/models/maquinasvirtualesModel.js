@@ -21,7 +21,7 @@ class MaquinaVirtualModel {
     );
   }
 
-  updateMaquinavirtual(id, encargado, callback) {
+  updateMaquinavirtual(id, maquinavirtual, callback) {
     db.query(
       'UPDATE maquinavirtual SET sistemaOperativo = ?, materias = ?, programas = ? WHERE idMaquinaVirtual = ?',
       [maquinavirtual.sistemaOperativo, maquinavirtual.materias, maquinavirtual.programas, id],

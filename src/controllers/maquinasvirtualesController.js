@@ -6,6 +6,7 @@ class MaquinavirtualController {
       if(err){
         res.status(500).json({ error: 'Error al obtener las maquinas virtuales', detalle: err });
       } else {
+        console.log(maquinasvirtuales)
         res.json(maquinasvirtuales);
       }
     })
@@ -23,7 +24,8 @@ class MaquinavirtualController {
   }
 
   createMaquinavirtual(req, res){
-    MaquinaVirtualModel.createMaquinavirtual((err, maquinavirtual) => {
+    const maquinavirtual = req.body;
+    MaquinaVirtualModel.createMaquinavirtual(maquinavirtual, (err, maquinavirtual) => {
       if(err) {
         res.status(500).json({ error: 'Error al crear la maquina virtual' });
       } else {
@@ -34,7 +36,8 @@ class MaquinavirtualController {
 
   updateMaquinavirtual(req, res){
     const id = req.params.id;
-    MaquinaVirtualModel.updateMaquinavirtual(id, (err, maquinavirtual) => {
+    const maquinavirtual = req.body;
+    MaquinaVirtualModel.updateMaquinavirtual(id, maquinavirtual, (err, maquinavirtual) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar la maquina virtual' });
       } else {

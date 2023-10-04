@@ -11,3 +11,40 @@ Content-Type: application/json
     "email": "facundoduran31@gmail.com",
     "password": "123456"
 }
+
+###
+GET http://localhost:3000/api/maquinasvirtuales/ HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2MzQyMzExLCJleHAiOjE2OTY0Mjg3MTF9.-BXxgb5P3yWvlbK4uXcUCH6Le34sCVicv95SaDp6bIk
+
+###
+GET http://localhost:3000/api/maquinasvirtuales/74 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2MzQyMzExLCJleHAiOjE2OTY0Mjg3MTF9.-BXxgb5P3yWvlbK4uXcUCH6Le34sCVicv95SaDp6bIk
+
+###
+POST http://localhost:3000/api/maquinasvirtuales/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2MzQyMzExLCJleHAiOjE2OTY0Mjg3MTF9.-BXxgb5P3yWvlbK4uXcUCH6Le34sCVicv95SaDp6bIk
+
+{
+    "sistemaOperativo": "Windows",
+    "materias": "Paradigmas",
+    "programas": "Smalltalk"
+}
+
+###
+
+PUT http://localhost:3000/api/maquinasvirtuales/74 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2MzQyMzExLCJleHAiOjE2OTY0Mjg3MTF9.-BXxgb5P3yWvlbK4uXcUCH6Le34sCVicv95SaDp6bIk
+
+{
+    "sistemaOperativo": "WindowsActualizado",
+    "materias": "Paradigmas",
+    "programas": "Smalltalk"
+}
+
+###
+
+DELETE http://localhost:3000/api/maquinasvirtuales/73 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2MzQyMzExLCJleHAiOjE2OTY0Mjg3MTF9.-BXxgb5P3yWvlbK4uXcUCH6Le34sCVicv95SaDp6bIk
