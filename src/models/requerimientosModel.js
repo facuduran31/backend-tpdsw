@@ -43,8 +43,8 @@ class RequerimientoModel {
 
   updateRequerimiento(id, requerimiento, callback) {
     db.query(
-      'UPDATE requerimiento SET tipoRequerimiento = ?, estado = ?, comentarioEncargado = ?, legajoEncargado = ?, legajoDocente = ?, hdmi = ?, vga = ?, mouse = ?, idrequerimiento = ?, fechaInicio = ?, fechaFin = ?, horaInicio = ?, horaFin = ?, materia = ?, zapatilla = ?, proyector = ?, tipoReserva = ?, descripcion = ? WHERE idRequerimiento = ?',
-      [requerimiento.tipoRequerimiento, requerimiento.estado, requerimiento.programas, requerimiento.comentarioEncargado, requerimiento.legajoEncargado, requerimiento.legajoDocente, requerimiento.hdmi, requerimiento.vga, requerimiento.mouse, requerimiento.idrequerimiento, requerimiento.fechaInicio, requerimiento.fechaFin, requerimiento.horaInicio, requerimiento.horaFin, requerimiento.materia, requerimiento.zapatilla, requerimiento.proyector, requerimiento.tipoReserva, requerimiento.descripcion, id],
+      'UPDATE requerimiento SET tipoRequerimiento = ?, estado = ?, comentarioEncargado = ?, legajoEncargado = ?, legajoDocente = ?, hdmi = ?, vga = ?, mouse = ?, fechaInicio = ?, fechaFin = ?, horaInicio = ?, horaFin = ?, materia = ?, zapatilla = ?, proyector = ?, tipoReserva = ?, descripcion = ? WHERE idRequerimiento = ?',
+      [requerimiento.tipoRequerimiento, requerimiento.estado, requerimiento.comentarioEncargado, requerimiento.legajoEncargado, requerimiento.legajoDocente, requerimiento.hdmi, requerimiento.vga, requerimiento.mouse, requerimiento.fechaInicio, requerimiento.fechaFin, requerimiento.horaInicio, requerimiento.horaFin, requerimiento.materia, requerimiento.zapatilla, requerimiento.proyector, requerimiento.tipoReserva, requerimiento.descripcion, id],
       callback
     );
   }

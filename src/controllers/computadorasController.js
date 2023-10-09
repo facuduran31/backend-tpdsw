@@ -23,7 +23,8 @@ class ComputadoraController {
   }
 
   createComputadora(req, res){
-    ComputadoraModel.createComputadora((err, computadora) => {
+    const computadora = req.body;
+    ComputadoraModel.createComputadora(computadora, (err, computadora) => {
       if(err) {
         res.status(500).json({ error: 'Error al crear la computadora' });
       } else {
@@ -34,7 +35,8 @@ class ComputadoraController {
 
   updateComputadora(req, res){
     const id = req.params.id;
-    ComputadoraModel.updateComputadora(id, (err, computadora) => {
+    const computadora = req.body;
+    ComputadoraModel.updateComputadora(id, computadora, (err, computadora) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar la computadora' });
       } else {

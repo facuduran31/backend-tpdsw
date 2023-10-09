@@ -23,7 +23,8 @@ class RequerimientoController {
   }
 
   createRequerimiento(req, res){
-    RequerimientoModel.createRequerimiento((err, requerimiento) => {
+    const requerimiento = req.body;
+    RequerimientoModel.createRequerimiento(requerimiento, (err, requerimiento) => {
       if(err) {
         res.status(500).json({ error: 'Error al crear el requerimiento'});
       } else {
@@ -34,9 +35,10 @@ class RequerimientoController {
 
   updateRequerimiento(req, res){
     const id = req.params.id;
-    RequerimientoModel.updateRequerimiento(id, (err, requerimiento) => {
+    const requerimiento = req.body;
+    RequerimientoModel.updateRequerimiento(id, requerimiento, (err, requerimiento) => {
       if(err) {
-        res.status(500).json({ error: 'Error al actualizar el requerimiento' });
+        res.status(500).json({ error: 'Error al actualizar el requerimiento', error: err });
       } else {
         res.json(requerimiento);
       }
