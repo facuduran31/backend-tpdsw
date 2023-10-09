@@ -30,33 +30,19 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5v
 
 ###
 
-PUT http://localhost:3000/api/requerimientos/6 HTTP/1.1
+PUT http://localhost:3000/api/computadoras/2 HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2ODYxODkxLCJleHAiOjE2OTY5NDgyOTF9.ODzjDHhTvRMzmcy5BXBCbf9TC494WjEtzDEJkQdBcGY
 
 {
-    "tipoRequerimiento": "Reserva de laboratorio",
-    "estado": "A",
-    "comentarioEncargado": null,
-    "legajoEncargado": null,
-    "legajoDocente": null,
-    "hdmi": null,
-    "vga": null,
-    "mouse": null,
-    "idLaboratorio": null,
-    "fechaInicio": null,
-    "fechaFin": null,
-    "horaInicio": null,
-    "horaFin": null,
-    "materia": null,
-    "zapatilla": null,
-    "proyector": null,
-    "tipoReserva": null,
-    "descripcion": null
+    "procesador": "INTEL i5",
+    "descripcionRam": "8gb ddr4",
+    "descripcionAlmacenamiento": "1tb",
+    "laboratorio_idLaboratorio": 1
 }
 
 ###
 
-DELETE http://localhost:3000/api/maquinasvirtuales/73 HTTP/1.1
+DELETE http://localhost:3000/api/requerimientos/6 HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZWdham8iOiI1MDIwNCIsIm5vbWJyZSI6IkZhY3VuZG8iLCJhcGVsbGlkbyI6IkR1cmFuIiwiZW1haWwiOiJmYWN1bmRvZHVyYW4zMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsInRpcG9Vc3VhcmlvIjoiRW5jYXJnYWRvIiwiaWF0IjoxNjk2ODYxODkxLCJleHAiOjE2OTY5NDgyOTF9.ODzjDHhTvRMzmcy5BXBCbf9TC494WjEtzDEJkQdBcGY

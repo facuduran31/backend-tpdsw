@@ -23,7 +23,7 @@ class ComputadoraModel {
 
   updateComputadora(id, computadora, callback) {
     db.query(
-      'UPDATE computadora SET procesador = ?, descripcionRam = ?, descripcionAlmacenamiento = ?, laboratorio_idLaboratorio = ? WHERE idCmputadora = ?',
+      'UPDATE computadora SET procesador = ?, descripcionRam = ?, descripcionAlmacenamiento = ?, laboratorio_idLaboratorio = ? WHERE idComputadora = ?',
       [computadora.procesador, computadora.descripcionRam, computadora.descripcionAlmacenamiento, computadora.laboratorio_idLaboratorio, id],
       callback
     );
