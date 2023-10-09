@@ -13,7 +13,7 @@ class ComputadoraController {
 
   getComputadoraById(req, res){
     const id = req.params.id;
-    ComputadoraModel.getcomputadoraById(id, (err, computadora) => {
+    ComputadoraModel.getComputadoraById(id, (err, computadora) => {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la computadora' });
       } else {
@@ -26,7 +26,7 @@ class ComputadoraController {
     const computadora = req.body;
     ComputadoraModel.createComputadora(computadora, (err, computadora) => {
       if(err) {
-        res.status(500).json({ error: 'Error al crear la computadora' });
+        res.status(500).json({ error: 'Error al crear la computadora', error: err });
       } else {
         res.json(computadora);
       }
