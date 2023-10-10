@@ -6,7 +6,6 @@ class MaquinavirtualController {
       if(err){
         res.status(500).json({ error: 'Error al obtener las maquinas virtuales', detalle: err });
       } else {
-        console.log(maquinasvirtuales)
         res.json(maquinasvirtuales);
       }
     })
@@ -18,7 +17,7 @@ class MaquinavirtualController {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la maquina virtual' });
       } else {
-        res.json(maquinavirtual);
+        res.json(maquinavirtual[0]);
       }
     });
   }
