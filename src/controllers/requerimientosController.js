@@ -17,7 +17,7 @@ class RequerimientoController {
       if(err) {
         res.status(500).json({ error: 'Error al obtener el requerimiento' });
       } else {
-        res.json(requerimiento);
+        res.json(requerimiento[0]);
       }
     });
   }

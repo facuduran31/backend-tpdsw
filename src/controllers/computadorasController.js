@@ -17,7 +17,7 @@ class ComputadoraController {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la computadora' });
       } else {
-        res.json(computadora);
+        res.json(computadora[0]);
       }
     });
   }

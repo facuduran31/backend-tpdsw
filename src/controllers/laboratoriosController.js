@@ -17,7 +17,7 @@ class LaboratorioController {
       if(err) {
         res.status(500).json({ error: 'Error al obtener la laboratorio' });
       } else {
-        res.json(laboratorio);
+        res.json(laboratorio[0]);
       }
     });
   }
