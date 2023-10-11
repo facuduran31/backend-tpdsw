@@ -13,6 +13,14 @@ class LaboratorioModel {
     );
   }
 
+  getComputadorasByLaboratorioId(id, callback) {
+    db.query(
+      'SELECT * FROM computadora WHERE laboratorio_idLaboratorio = ?', 
+      [id], 
+      callback
+    );
+  }
+
   createLaboratorio(laboratorio, callback) {
     db.query(
       'INSERT INTO laboratorio (nombreLaboratorio) VALUES (?)',

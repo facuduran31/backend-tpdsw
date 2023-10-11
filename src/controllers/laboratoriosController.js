@@ -22,6 +22,17 @@ class LaboratorioController {
     });
   }
 
+  getComputadorasByLaboratorioId(req, res){
+    const id = req.params.id;
+    LaboratorioModel.getComputadorasByLaboratorioId(id, (err, computadoras) => {
+      if(err) {
+        res.status(500).json({ error: 'Error al obtener las computadoras' });
+      } else {
+        res.json(computadoras);
+      }
+    });
+  }
+
   createLaboratorio(req, res){
     const laboratorio = req.body;
     LaboratorioModel.createLaboratorio(laboratorio, (err, laboratorio) => {
