@@ -14,6 +14,14 @@ class RequerimientoModel {
     );
   }
 
+  getRequerimientoByIdDocente(id, callback) {
+    db.query(
+      'SELECT * FROM requerimiento WHERE legajoDocente = ?', 
+      [id], 
+      callback
+    );
+  }
+
   createRequerimiento(requerimiento, callback) {
     db.query(
       'INSERT INTO requerimiento (tipoRequerimiento, estado, comentarioEncargado, legajoEncargado, legajoDocente, hdmi, vga, mouse, idrequerimiento, fechaInicio, fechaFin, horaInicio, horaFin, materia, zapatilla, proyector, tipoReserva, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',

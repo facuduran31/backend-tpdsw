@@ -27,7 +27,7 @@ routerLogin.post('/', (req, res) => {
         return res.status(500).json({ error: 'Error al generar el token.' });
       }
 
-      res.json({ token });
+      res.json({ token, usuarioAutenticado });
     });
   });
 });

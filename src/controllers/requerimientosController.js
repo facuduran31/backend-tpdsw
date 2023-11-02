@@ -22,6 +22,17 @@ class RequerimientoController {
     });
   }
 
+  getRequerimientoByIdDocente(req, res){
+    const id = req.params.id;
+    RequerimientoModel.getRequerimientoByIdDocente(id, (err, requerimiento) => {
+      if(err) {
+        res.status(500).json({ error: 'Error al obtener el requerimiento' });
+      } else {
+        res.json(requerimiento);
+      }
+    });
+  }
+
   createRequerimiento(req, res){
     const requerimiento = req.body;
     RequerimientoModel.createRequerimiento(requerimiento, (err, requerimiento) => {
