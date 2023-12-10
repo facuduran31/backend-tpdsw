@@ -15,7 +15,7 @@ class ComputadoraModel {
 
   createComputadora(computadora, callback) {
     db.query(
-      'INSERT INTO computadora (procesador, descripcionRam, descripcionAlmacenamiento, imagen, laboratorio_idLaboratorio) VALUES (?, ?, ?, ?)',
+      'INSERT INTO computadora (procesador, descripcionRam, descripcionAlmacenamiento, imagen, laboratorio_idLaboratorio) VALUES (?, ?, ?, ?, ?)',
       [computadora.procesador, computadora.descripcionRam, computadora.descripcionAlmacenamiento, computadora.imagen, computadora.laboratorio_idLaboratorio],
       callback
     );
