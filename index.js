@@ -7,6 +7,7 @@ const maquinasvirtualesRouter = require('./src/routers/maquinasvirtualesRouter')
 const computadorasRouter = require('./src/routers/computadorasRouter');
 const requerimientosRouter = require('./src/routers/requerimientosRouter');
 const laboratoriosRouter = require('./src/routers/laboratoriosRouter');
+const docentesRouter = require('./src/routers/docentesRouter');
 const { routerLogin, verificarToken } = require('./src/routers/loginRouter');
 
 // Middlewares
@@ -23,6 +24,7 @@ app.use('/api/', maquinasvirtualesRouter);
 app.use('/api/', computadorasRouter);
 app.use('/api/', requerimientosRouter);
 app.use('/api/', laboratoriosRouter);
+app.use('/api/', docentesRouter);
 app.use('/api/login', routerLogin);
 
 // Iniciar el servidor
