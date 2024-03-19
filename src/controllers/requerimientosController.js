@@ -14,7 +14,6 @@ class RequerimientoController {
       if (err) {
         res.status(500).json({ error: 'Error al obtener los requerimientos', detalle: err });
       } else {
-        this.formatearFechas(requerimientos);
         res.json(requerimientos);
       }
     });
@@ -26,7 +25,6 @@ class RequerimientoController {
       if (err) {
         res.status(500).json({ error: 'Error al obtener el requerimiento' });
       } else {
-        this.formatearFechas([requerimiento]);
         res.json(requerimiento[0]);
       }
     });
@@ -38,7 +36,6 @@ class RequerimientoController {
       if (err) {
         res.status(500).json({ error: 'Error al obtener el requerimiento' });
       } else {
-        this.formatearFechas(requerimientos);
         res.json(requerimientos);
       }
     });
