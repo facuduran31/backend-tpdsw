@@ -55,6 +55,8 @@ class RequerimientoController {
   updateRequerimiento(req, res) {
     const id = req.params.id;
     const requerimiento = req.body;
+    requerimiento.fechaInicio = new Date(requerimiento.fechaInicio);
+    requerimiento.fechaFin = new Date(requerimiento.fechaFin);
     RequerimientoModel.updateRequerimiento(id, requerimiento, (err, requerimiento) => {
       if (err) {
         console.log(err);
