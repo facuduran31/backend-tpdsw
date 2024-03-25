@@ -26,10 +26,10 @@ Se desarrollará un sistema de información utilizada por docentes para reservar
 Regularidad:
 |Requerimiento|Detalle|
 |:-|:-|
-|CRUD simple|1. CRUD Usuario<br>2. CRUD Computadora<br>3. CRUD Máquina Virtual<br>4. CRUD Recurso<br>5. CRUD Laboratorio<br>6. CRUD Notebook<br>7. CRUD Proyector<br>8. CRUD Encargado<br>9. CRUD Reserva<br>10. CRUD Computadora_maquina_virtual<br>11. CRUD Notebook_Maquina_Virtual|
-|CRUD dependiente|1. CRUD reserva {depende de} CRUD docente+laboratorio+recurso<br>2. CRUD computadora  {depende de} CRUD lab|
-|Listado<br>+<br>detalle| 1. Listado de laboratorios disponibles para una fecha y hora seleccionada. => detalle CRUD Laboratorio.<br> 2. Listado de reservas que tengan estado pendiente. => detalle CRUD Reserva.|
-|CUU/Epic|1. Registrar reserva.<br>2. Confirmar reserva.|
+|CRUD simple|1. CRUD Usuario<br>2. CRUD Laboratorio<br>3. CRUD Máquina Virtual<br>|
+|CRUD dependiente|1. CRUD Computadora {depende de} CRUD Laboratorio|
+|Listado<br>+<br>detalle| 1. Listado de requerimientos de un docente por estado. => detalle CRUD Requerimientos.<br>|
+|CUU/Epic|1. Registrar requerimiento.<br>2. Atender requerimiento.|
 
 
 ### Alcance Adicional Voluntario
@@ -37,6 +37,5 @@ Regularidad:
 Adicionales para Aprobación
 |Requerimiento|Detalle|
 |:-|:-|
-|Listado<br>+<br>detalle| 1. Listado de máquinas virtuales que tengan un software. => detalle CRUD Máquinas Virtuales.|
 |CUU/Epic|1. Cancelar reserva.|
 |Otros|1. Notificación de estado final de reserva vía mail.|
