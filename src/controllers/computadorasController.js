@@ -26,6 +26,7 @@ class ComputadoraController {
     const computadora = req.body;
     ComputadoraModel.createComputadora(computadora, (err, computadora) => {
       if(err) {
+        console.log(err)
         res.status(500).json({ error: 'Error al crear la computadora', error: err });
       } else {
         res.json(computadora);
