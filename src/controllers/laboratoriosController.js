@@ -46,7 +46,7 @@ class LaboratorioController {
 
   updateLaboratorio(req, res){
     const id = req.params.id;
-    laboratorio = req.body;
+    const laboratorio = req.body;
     LaboratorioModel.updateLaboratorio(id, laboratorio, (err, laboratorio) => {
       if(err) {
         res.status(500).json({ error: 'Error al actualizar el laboratorio' });
