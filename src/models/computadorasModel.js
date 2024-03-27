@@ -22,9 +22,10 @@ class ComputadoraModel {
   }
 
   updateComputadora(id, computadora, callback) {
+    console.log(computadora)
     db.query(
       'UPDATE computadora SET procesador = ?, descripcionRam = ?, descripcionAlmacenamiento = ?, laboratorio_idLaboratorio = ?, imagen = ? WHERE idComputadora = ?',
-      [computadora.procesador, computadora.descripcionRam, computadora.descripcionAlmacenamiento, computadora.laboratorio_idLaboratorio, computadora.imagen, id],
+      [computadora.procesador, computadora.descripcionRam, computadora.descripcionAlmacenamiento, computadora.Laboratorio_idLaboratorio, computadora.imagen, id],
       callback
     );
   }

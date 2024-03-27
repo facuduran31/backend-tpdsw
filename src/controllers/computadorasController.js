@@ -37,9 +37,11 @@ class ComputadoraController {
   updateComputadora(req, res){
     const id = req.params.id;
     const computadora = req.body;
+    console.log(computadora)
     ComputadoraModel.updateComputadora(id, computadora, (err, computadora) => {
       if(err) {
-        res.status(500).json({ error: 'Error al actualizar la computadora' });
+        console.log(err)
+        res.status(500).json({ error: 'Error al actualizar la computadora', error: err});
       } else {
         res.json(computadora);
       }
