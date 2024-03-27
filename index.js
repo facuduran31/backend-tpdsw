@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const path = require('path');
 const app = express();
 const port = 3000;
+const mysqlConnection = require('./src/database/db');
 const maquinasvirtualesRouter = require('./src/routers/maquinasvirtualesRouter');
 const computadorasRouter = require('./src/routers/computadorasRouter');
 const requerimientosRouter = require('./src/routers/requerimientosRouter');
@@ -46,7 +47,7 @@ const upload = multer({ storage: storage })
 
 // Rutas
 app.get("/upload", (req, res) => {
-    mysqlConnection.query('SELECT * FROM  files', (err, rows, fields) => {
+    mysqlConnection.query('SELECT * FROM files', (err, rows, fields) => {
         if (!err) {
             res.json(rows);
         } else {
@@ -59,8 +60,6 @@ app.post('/file', upload.single('file'), (req, res, next) => {
     const file = req.file;
 
     const filesImg = {
-
-        id: null,
         nombre: file.filename,
         imagen: file.path,
         fecha_creacion: null
@@ -72,10 +71,13 @@ app.post('/file', upload.single('file'), (req, res, next) => {
         return next(error)
     }
 
-    res.send(file);
-    console.log(filesImg);
-
-    mysqlConnection.query('INSERT INTO files set ?', [filesImg]);
+    mysqlConnection.query('INSERT INTO files set ?', [filesImg], (err, rows, fields) => {
+        if (!err) {
+            res.json(filesImg.imagen);
+        } else {
+            console.log(err);
+        }
+    });
 
 });
 
