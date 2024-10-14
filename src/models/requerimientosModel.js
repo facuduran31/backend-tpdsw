@@ -55,6 +55,7 @@ class RequerimientoModel {
       [requerimiento.tipoRequerimiento, requerimiento.estado, requerimiento.comentarioEncargado, requerimiento.legajoEncargado, requerimiento.legajoDocente, requerimiento.hdmi, requerimiento.vga, requerimiento.mouse, requerimiento.fechaInicio, requerimiento.fechaFin, requerimiento.horaInicio, requerimiento.horaFin, requerimiento.materia, requerimiento.zapatilla, requerimiento.proyector, requerimiento.tipoReserva, requerimiento.descripcion, id],
       callback
     );
+    console.log(requerimiento.estado)
   }
 
   deleteRequerimiento(id, callback) {

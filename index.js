@@ -91,7 +91,7 @@ app.delete('/delete/:id', (req, res) => {
 
 function deleteFile(id) {
 
-    mysqlConnection.query('SELECT * FROM  files WHERE id = ?', [id], (err, rows, fields) => {
+    mysqlConnection.query('SELECT * FROM files WHERE id = ?', [id], (err, rows, fields) => {
         [{ imagen }] = rows;
         fs.unlink(path.resolve('./' + imagen)).then(() => {
             console.log('Imagen eliminada');
