@@ -19,11 +19,6 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
 
-// Ruta raíz
-app.get('/', (req, res) => {
-  res.send("Corriendo servidor");
-});
-
 // Rutas
 app.use('/api/', maquinasvirtualesRouter);
 app.use('/api/', computadorasRouter);
@@ -97,10 +92,18 @@ function deleteFile(id) {
             console.log('Imagen eliminada');
         }).catch(err => { console.error('no exite el archivo') })
     });
-
 }
+
+// Correr frontend en carpeta dist
+app.use(express.static(path.join(__dirname, 'dist/frontend')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/frontend/index.html'));
+});
+
+
 
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor Express escuchando en http://localhost:${port}`);
+
 });
