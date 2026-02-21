@@ -60,7 +60,7 @@ class LaboratorioController {
     const id = req.params.id;
     LaboratorioModel.deleteLaboratorio(id, (err, laboratorio) => {
       if(err) {
-        res.status(500).json({ error: 'Error al eliminar el laboratorio' });
+        res.status(500).json({ error: 'Error al eliminar el laboratorio'});
       } else {
         res.json(laboratorio);
       }
