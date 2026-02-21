@@ -6,13 +6,20 @@ const morgan = require('morgan');
 const path = require('path');
 const app = express();
 const port = 3000;
-const mysqlConnection = require('./src/database/db');
 const maquinasvirtualesRouter = require('./src/routers/maquinasvirtualesRouter');
 const computadorasRouter = require('./src/routers/computadorasRouter');
 const requerimientosRouter = require('./src/routers/requerimientosRouter');
 const laboratoriosRouter = require('./src/routers/laboratoriosRouter');
 const docentesRouter = require('./src/routers/docentesRouter');
 const { routerLogin, verificarToken } = require('./src/routers/loginRouter');
+
+// Database
+let mysqlConnection;
+
+if (process.env.NODE_ENV !== 'test') {
+  const db = require('./src/database/db');
+  mysqlConnection = db.connect();
+}
 
 // Middlewares
 app.use(express.json());
@@ -100,13 +107,12 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/frontend/index.html'));
 });
 
+const isTest = process.env.NODE_ENV === 'test';
 
-
-if (process.env.NODE_ENV !== 'test') {
+if (!isTest) {
   app.listen(port, () => {
     console.log(`Servidor Express escuchando en http://localhost:${port}`);
   });
 }
 
 module.exports = app;
-
