@@ -3,8 +3,8 @@
 ## Grupo
 ### Integrantes
 * 50204 - Duran, Facundo Nicolás
-* 49853 - Gianotto, Leandro
-* 49438 - Simbel, Santino
+* 49853 - Gianotto, Leandro (abandonó)
+* 49438 - Simbel, Santino (abandonó)
 
 ### Repositorios
 * [frontend app](https://github.com/facuduran31/frontend-tpdsw.git)
@@ -15,7 +15,8 @@
 Se desarrollará un sistema de información utilizada por docentes para reservar un laboratorio un día específico o por cuatrimestre, además de materiales adicionales como notebooks, proyectores, etc. Por otro lado, los encargados de laboratorios gestionan las solicitudes de reservas, y las características de los laboratorios con sus respectivas computadoras y máquinas virtuales.
 
 ### Modelo
-![imagen del modelo](https://imgur.com/soer9xz)
+
+<img width="891" height="967" alt="DER drawio" src="https://github.com/user-attachments/assets/27cece2f-6046-4f97-87c8-f136eecf1385" />
 
 
 
