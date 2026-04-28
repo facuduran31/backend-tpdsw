@@ -26,7 +26,7 @@ y máquinas virtuales.
 
 ### Modelo
 
-`<img width="891" height="967" alt="DER drawio" src="https://github.com/user-attachments/assets/27cece2f-6046-4f97-87c8-f136eecf1385" />`{=html}
+![enter image description here](https://github-production-user-asset-6210df.s3.amazonaws.com/109033976/576515305-27cece2f-6046-4f97-87c8-f136eecf1385.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA/20260428/us-east-1/s3/aws4_request&X-Amz-Date=20260428T165514Z&X-Amz-Expires=300&X-Amz-Signature=56c7361d8a9db712cc25b9ba1fe8b7a1c1873ff4cec54a4113caa3821da91c2a&X-Amz-SignedHeaders=host&response-content-type=image/png)
 
 ## Alcance Funcional
 
