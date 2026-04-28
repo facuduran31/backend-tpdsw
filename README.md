@@ -32,19 +32,24 @@ y máquinas virtuales.
 
 ### Alcance Mínimo
 
-Regularidad: \|Requerimiento\|Detalle\| \|:-\|:-\| \|CRUD simple\|1.
-CRUD Usuario`<br>`{=html}2. CRUD Laboratorio`<br>`{=html}3. CRUD Máquina
-Virtual`<br>`{=html}\| \|CRUD dependiente\|1. CRUD Computadora {depende
-de} CRUD Laboratorio\| \|Listado`<br>`{=html}+`<br>`{=html}detalle\| 1.
-Listado de requerimientos de un docente por estado. =\> detalle CRUD
-Requerimientos.`<br>`{=html}\| \|CUU/Epic\|1. Registrar
-requerimiento.`<br>`{=html}2. Atender requerimiento.\|
+
+| Requerimiento | Detalle |
+| :--- | :--- |
+| **CRUD simple** | 1. CRUD Usuario<br>{=html}2. CRUD Laboratorio<br>{=html}3. CRUD Máquina Virtual<br>{=html} |
+| **CRUD dependiente** | 1. CRUD Computadora {depende de} CRUD Laboratorio |
+| **Listado + detalle** | 1. Listado de requerimientos de un docente por estado. => detalle CRUD Requerimientos.<br>{=html} |
+| **CUU/Epic** | 1. Registrar requerimiento.<br>{=html}2. Atender requerimiento. |
+
 
 ### Alcance Adicional Voluntario
 
-Adicionales para Aprobación \|Requerimiento\|Detalle\| \|:-\|:-\|
-\|CUU/Epic\|1. Cancelar reserva.\| \|Otros\|1. Notificación de estado
-final de reserva vía mail.\|
+Adicionales para Aprobación 
+
+ | Requerimiento | Detalle |
+| :--- | :--- |
+| **CRUD SIMPLE** | 1. Cancelar reserva
+|**CUU/Epic** |1. Cancelar reserva. |
+|**Otros** |1. Notificación de estado final de reserva vía mail.|
 
 ## EJECUCIÓN
 
