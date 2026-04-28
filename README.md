@@ -99,8 +99,8 @@ Disponible en http://localhost:4200
 
 ### 6. Usuarios de prueba
 
-Docente: 12345 / 123456\
-Encargado: 50204 / 123456
+Docente: adrianmeca@gmail.com / 123456\
+Encargado: facundoduran31@gmail.com / 123456
 
 ### 7. Consideraciones
 
