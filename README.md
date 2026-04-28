@@ -35,10 +35,10 @@ y máquinas virtuales.
 
 | Requerimiento | Detalle |
 | :--- | :--- |
-| **CRUD simple** | 1. CRUD Usuario<br>{=html}2. CRUD Laboratorio<br>{=html}3. CRUD Máquina Virtual<br>{=html} |
+| **CRUD simple** | 1. CRUD Usuario<br>2. CRUD Laboratorio<br>3. CRUD Máquina Virtual<br>{=html} |
 | **CRUD dependiente** | 1. CRUD Computadora {depende de} CRUD Laboratorio |
-| **Listado + detalle** | 1. Listado de requerimientos de un docente por estado. => detalle CRUD Requerimientos.<br>{=html} |
-| **CUU/Epic** | 1. Registrar requerimiento.<br>{=html}2. Atender requerimiento. |
+| **Listado + detalle** | 1. Listado de requerimientos de un docente por estado. => detalle CRUD Requerimientos.<br> |
+| **CUU/Epic** | 1. Registrar requerimiento.<br>2. Atender requerimiento. |
 
 
 ### Alcance Adicional Voluntario
