@@ -96,7 +96,6 @@ function deleteFile(id) {
     mysqlConnection.query('SELECT * FROM files WHERE id = ?', [id], (err, rows, fields) => {
         [{ imagen }] = rows;
         fs.unlink(path.resolve('./' + imagen)).then(() => {
-            console.log('Imagen eliminada');
         }).catch(err => { console.error('no exite el archivo') })
     });
 }

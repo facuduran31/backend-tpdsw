@@ -10,7 +10,6 @@ routerLogin.post('/', (req, res) => {
   // Verificar credenciales y tipo de usuario
   connection.query('SELECT * FROM usuario WHERE email = ? AND password = ?', [email, password], (err, results) => {
     if (err) {
-      console.error('Error al consultar la base de datos:', err);
       return res.status(500).json({ error: 'Error al verificar las credenciales.' });
     }
 
@@ -23,7 +22,6 @@ routerLogin.post('/', (req, res) => {
     // Generar y enviar token
     jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '24h' }, (err, token) => {
       if (err) {
-        console.error('Error al generar el token:', err);
         return res.status(500).json({ error: 'Error al generar el token.' });
       }
 
@@ -42,7 +40,6 @@ routerLogin.get('/verify', (req, res) => {
   jwt.verify(token, SECRET_KEY, (err, decoded) => {
     if (err) {
       // El token no es válido.
-      console.error('Token inválido:', err);
       return res.status(401).json({ error: 'Token inválido.', token: token });
     }
 
@@ -73,7 +70,6 @@ function verificarToken(req, res, next) {
   jwt.verify(token, SECRET_KEY, (err, decoded) => {
     if (err) {
       // El token no es válido.
-      console.error('Token inválido:', err);
       return res.status(401).json({ error: 'Token inválido.' });
     }
 

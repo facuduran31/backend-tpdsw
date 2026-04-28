@@ -59,7 +59,6 @@ class RequerimientoController {
     requerimiento.fechaFin = new Date(requerimiento.fechaFin);
     RequerimientoModel.updateRequerimiento(id, requerimiento, (err, requerimiento) => {
       if (err) {
-        console.log(err);
         res.status(500).json({ error: 'Error al actualizar el requerimiento', error: err });
       } else {
         res.json(requerimiento);
